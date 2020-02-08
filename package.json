@@ -1,0 +1,41 @@
+{
+  "name": "@pksilen/reactive-js",
+  "version": "0.1.1",
+  "description": "Reactive JS",
+  "keywords": [
+    "reactive",
+    "js"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rimraf ./lib",
+    "check-types": "tsc --outDir ./lib/types",
+    "build": "babel ./src --out-dir lib --source-maps --extensions \".ts\"",
+    "prebuild": "npm run clean && npm run check-types",
+    "prepublishOnly": "npm run build",
+    "prettier": "prettier --check \"src/**/*.ts\""
+  },
+  "author": "Petri Silen",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pksilen/reactive-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pksilen/reactive-js/issues"
+  },
+  "homepage": "https://github.com/pksilen/reactive-js/issues#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-typescript": "^7.8.3",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.1",
+    "typescript": "^3.7.5"
+  }
+}
